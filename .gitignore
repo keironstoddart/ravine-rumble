@@ -3,3 +3,4 @@ venv
 configurations.py
 /private.json
 /token.json
+__pycache__
