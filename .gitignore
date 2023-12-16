@@ -4,3 +4,4 @@ configurations.py
 /private.json
 /token.json
 __pycache__
+/run.sh
