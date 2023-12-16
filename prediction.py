@@ -38,9 +38,9 @@ def predict_winner(
 
 
 def main():
-    a = 50, 121.64
-    b = 50, 108.71
-    print(predict_winner(a, b, 10_000))
+    a = 120, 121.64
+    b = 108, 108.71
+    print(_predict(a, b, 10_000))
 
 
 if __name__ == '__main__':
