@@ -7,35 +7,33 @@
     <title>Ravine Rumble Losers' Bracket</title>
 </head>
 
-<h1 class="text-bg-danger pt-3 pb-3 text-center">Losers' Bracket</h1>
+<h1 class="text-bg-danger pt-3 pb-3 text-center">Losers' Bracket - Semifinals</h1>
 
 <div class="container text-center mt-3">
     <div class="row align-items-start mb-5 mb-lg-3">
         <div class="col-lg mt-5 mt-lg-3">
             <div class="row align-items-start">
                 <div class="col-5">
-                    <h2>(7) Nan</h2>
-                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/7" target="_blank">{{ nan['team_points'].total }}</a></h3>
-                    Projection: {{ nan['team_projected_points'].total }}<br>
+                    <h2>(9) Tyler</h2>
+                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/8" target="_blank">{{ tyler['team_points'].total }}</a></h3>
+                    Projection: {{ tyler['team_projected_points'].total }}<br>
                     <img
-                            src="{{ url_for('static', filename='nan.jpg') }}"
+                            src="{{ url_for('static', filename='tyler.jpg') }}"
                             alt="nan"
                             class="w-75 pt-2"
-                            style="opacity: {{ 1 - nan_prob }};"
                     >
                 </div>
                 <div class="col-2">
                     <h2>vs</h2>
                 </div>
                 <div class="col-5">
-                    <h2>Paul (10)</h2>
-                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/4" target="_blank">{{ paul['team_points'].total }}</a></h3>
-                    Projection: {{ paul['team_projected_points'].total }}
+                    <h2>Wonjoon (12)</h2>
+                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/6" target="_blank">{{ wonjoon['team_points'].total }}</a></h3>
+                    Projection: {{ wonjoon['team_projected_points'].total }}
                     <img
-                            src="{{ url_for('static', filename='paul.jpg') }}"
+                            src="{{ url_for('static', filename='wonjoon.jpg') }}"
                             alt="paul"
                             class="w-75 pt-2"
-                            style="opacity: {{ 1 - paul_prob }};"
                     >
                 </div>
             </div>
@@ -43,28 +41,26 @@
         <div class="col-lg mt-5 mt-lg-3">
             <div class="row align-items-start">
                 <div class="col-5">
-                    <h2>(8) Tim</h2>
-                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/8" target="_blank">{{ tim['team_points'].total }}</a></h3>
-                    Projection: {{ tim['team_projected_points'].total }}
+                    <h2>(10) Paul</h2>
+                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/4" target="_blank">{{ paul['team_points'].total }}</a></h3>
+                    Projection: {{ paul['team_projected_points'].total }}
                     <img
-                            src="{{ url_for('static', filename='tim.jpg') }}"
+                            src="{{ url_for('static', filename='paul.jpg') }}"
                             alt="paul"
                             class="w-75 pt-2"
-                            style="opacity: {{ 1 - tim_prob }};"
                     >
                 </div>
                 <div class="col-2">
                     <h2>vs</h2>
                 </div>
                 <div class="col-5">
-                    <h2>Tyler (9)</h2>
-                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/3" target="_blank">{{ tyler['team_points'].total }}</a></h3>
-                    Projection: {{ tyler['team_projected_points'].total }}
+                    <h2>Bacon (11)</h2>
+                    <h3><a href="https://football.fantasysports.yahoo.com/f1/447848/11" target="_blank">{{ brett['team_points'].total }}</a></h3>
+                    Projection: {{ brett['team_projected_points'].total }}
                     <img
-                            src="{{ url_for('static', filename='tyler.jpg') }}"
+                            src="{{ url_for('static', filename='brett.jpg') }}"
                             alt="paul"
                             class="w-75 pt-2"
-                            style="opacity: {{ 1 - tyler_prob }};"
                     >
                 </div>
             </div>
@@ -72,6 +68,6 @@
     </div>
 </div>
 
-<div class="text-center text-bg-danger mt-2">
-    Ultra Losers with a bye: Brett (11) and Wonjoon (12)
+<div class="text-center text-bg-success mt-2">
+    Safe losers: Nan (7) and Tim (8)
 </div>
