@@ -1,3 +1,5 @@
+from random import choice
+
 from flask import Flask, render_template
 from yfpy.query import YahooFantasySportsQuery
 
@@ -7,6 +9,15 @@ from declarations import Team, RAVINE_RUMBLE, GAME_CODE
 
 
 app = Flask(__name__)
+GIFS = [
+    'https://giphy.com/embed/vFhdC60CFCwgAUTQ6i',
+    'https://giphy.com/embed/nEuNUZP8rX9YyDMVud',
+    'https://giphy.com/embed/3ohc0Y2TA2KJRO66m4',
+    'https://giphy.com/embed/l57gbvjm8xU5uVSDnx',
+    'https://giphy.com/embed/3orieZBr6Oh8YmeR56',
+    'https://giphy.com/embed/0Q2Idjtt38WLwrLGnO',
+    'https://giphy.com/embed/jO1ZyDgmy9IBqFzPPm',
+]
 
 
 @app.route('/')
@@ -23,12 +34,10 @@ def home():
         consumer_secret=CLIENT_SECRET,
     )
 
-    brett = query_engine.get_team_stats_by_week(Team.BRETT.value, 16)
-    paul = query_engine.get_team_stats_by_week(Team.PAUL.value, 16)
-    wonjoon = query_engine.get_team_stats_by_week(Team.WONJOON.value, 16)
-    tyler = query_engine.get_team_stats_by_week(Team.TYLER.value, 16)
+    paul = query_engine.get_team_stats_by_week(Team.PAUL.value, 17)
+    tyler = query_engine.get_team_stats_by_week(Team.TYLER.value, 17)
 
     return render_template(
         'losers.html',
-        brett=brett, paul=paul, wonjoon=wonjoon, tyler=tyler,
+        paul=paul, tyler=tyler, gif=choice(GIFS)
     )
