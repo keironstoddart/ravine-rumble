@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from yfpy.query import YahooFantasySportsQuery
 
 
-from configurations import CLIENT_ID, CLIENT_SECRET, ENV_PATH, PATH
+from configurations import CLIENT_ID, CLIENT_SECRET, PATH
 from declarations import Team, RAVINE_RUMBLE, GAME_CODE, GAME_ID
 
 
