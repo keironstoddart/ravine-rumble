@@ -1,11 +1,12 @@
+from pathlib import Path
 from random import choice
 
 from flask import Flask, render_template
 from yfpy.query import YahooFantasySportsQuery
 
 
-from configurations import CLIENT_ID, CLIENT_SECRET, PATH
-from declarations import Team, RAVINE_RUMBLE, GAME_CODE
+from configurations import CLIENT_ID, CLIENT_SECRET, ENV_PATH, PATH
+from declarations import Team, RAVINE_RUMBLE, GAME_CODE, GAME_ID
 
 
 app = Flask(__name__)
@@ -23,21 +24,24 @@ GIFS = [
 @app.route('/')
 def home():
     # documentation: https://github.com/uberfastman/yfpy
-    query_engine = YahooFantasySportsQuery(
-        PATH,
-        RAVINE_RUMBLE,
-        GAME_CODE,
-        game_id=423,
-        offline=False,
-        all_output_as_json_str=False,
-        consumer_key=CLIENT_ID,
-        consumer_secret=CLIENT_SECRET,
+    query = YahooFantasySportsQuery(
+        league_id=RAVINE_RUMBLE,
+        game_code=GAME_CODE,
+        game_id=GAME_ID,
+        yahoo_consumer_key=CLIENT_ID,
+        yahoo_consumer_secret=CLIENT_SECRET,
+        env_file_location=Path(PATH)
     )
 
-    paul = query_engine.get_team_stats_by_week(Team.PAUL.value, 17)
-    tyler = query_engine.get_team_stats_by_week(Team.TYLER.value, 17)
+    query.save_access_token_data_to_env_file(
+        env_file_location=Path(PATH),
+        save_json_to_var_only=True
+    )
+
+    paul = query.get_team_stats_by_week(Team.PAUL.value, 15)
+    tim = query.get_team_stats_by_week(Team.TIM.value, 15)
 
     return render_template(
         'losers.html',
-        paul=paul, tyler=tyler, gif=choice(GIFS)
+        paul=paul, tim=tim, gif=choice(GIFS)
     )

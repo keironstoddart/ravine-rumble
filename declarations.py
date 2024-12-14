@@ -16,8 +16,8 @@ class Team(Enum):
     WONJOON = 6
 
 
-RAVINE_RUMBLE = "447848"
+RAVINE_RUMBLE = "546047"
 GAME_CODE = "nfl"
 
 # NFL - 2023, lifted this from example documentation, not positive what this is used for
-GAME_ID = 423
+GAME_ID = 449
