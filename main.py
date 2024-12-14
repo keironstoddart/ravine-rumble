@@ -45,3 +45,8 @@ def home():
         'losers.html',
         paul=paul, tim=tim, gif=choice(GIFS)
     )
+
+
+@app.route('/bracket')
+def bracket():
+    return render_template('bracket.html')
